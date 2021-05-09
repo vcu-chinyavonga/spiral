@@ -1,5 +1,15 @@
 def spiralize(number):
-    n = (number - 1) / 2
-    x = (3 + 2 * n * (8 * n * n + 15 * n + 13)) / 3
-    return_value = x
+    n = 1 
+    count = 0 
+    gap = 2
+    return_value = 0
+
+    while n <= number ** 2:
+        return_value += n
+        n += gap
+        count += 1
+        if count == 4:
+            gap = 2
+            count = 0
+    
     return return_value
